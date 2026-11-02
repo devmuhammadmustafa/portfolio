@@ -1,78 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Muhammad Mustafa</title>
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Mahammad Mustafali — Frontend Developer. Selected web projects and digital experiences." />
+  <title>Mahammad Mustafali — Developer Portfolio</title>
+  <style>
+    :root { color-scheme: light; --bg:#f8f9fb; --ink:#141820; --muted:#69717d; --line:#e3e7ec; --accent:#3158dc; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; background:var(--bg); color:var(--ink); font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; -webkit-font-smoothing:antialiased; }
+    a { color:inherit; text-decoration:none; }
+    .container { width:min(1100px,calc(100% - 48px)); margin-inline:auto; }
+    header { border-bottom:1px solid var(--line); }
+    .topbar { min-height:76px; display:flex; justify-content:space-between; align-items:center; gap:16px; }
+    .brand { font-size:16px; font-weight:750; letter-spacing:-.035em; }
+    .availability { font-size:12px; color:var(--muted); display:flex; gap:8px; align-items:center; }
+    .dot { width:8px; height:8px; border-radius:50%; background:#20a36a; }
+    .hero { padding:94px 0 85px; max-width:850px; }
+    .eyebrow { font-size:12px; letter-spacing:.17em; text-transform:uppercase; color:var(--accent); font-weight:700; }
+    h1 { font-size:clamp(44px,7vw,86px); line-height:1.04; letter-spacing:-.075em; font-weight:750; margin:22px 0 26px; }
+    .intro { color:var(--muted); font-size:clamp(16px,2vw,20px); line-height:1.7; max-width:650px; }
+    .hero-links { margin-top:34px; display:flex; flex-wrap:wrap; gap:12px; }
+    .button { display:inline-flex; align-items:center; gap:10px; padding:13px 18px; border:1px solid var(--line); border-radius:9px; font-size:13px; font-weight:650; transition:background .2s,transform .2s,border-color .2s; }
+    .button.primary { background:var(--ink); border-color:var(--ink); color:white; }
+    .button:hover { transform:translateY(-2px); border-color:var(--accent); }
+    .button.primary:hover { background:var(--accent); }
+    .section-head { border-top:1px solid var(--line); padding:34px 0 28px; display:flex; align-items:end; justify-content:space-between; gap:20px; }
+    h2 { margin:0; font-size:25px; letter-spacing:-.045em; }
+    .count { color:var(--muted); font-size:13px; }
+    .projects { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; padding-bottom:100px; }
+    .project { min-height:148px; background:white; border:1px solid var(--line); border-radius:13px; padding:24px; display:flex; flex-direction:column; justify-content:space-between; gap:28px; transition:transform .22s,border-color .22s,box-shadow .22s; }
+    .project:hover { transform:translateY(-4px); border-color:#b9c5ef; box-shadow:0 14px 38px rgba(18,32,60,.06); }
+    .project-top { display:flex; justify-content:space-between; align-items:start; gap:16px; }
+    .number { font-size:12px; font-weight:650; color:#9299a3; }
+    .arrow { font-size:21px; color:var(--accent); transition:transform .2s; }
+    .project:hover .arrow { transform:translate(3px,-3px); }
+    .project h3 { font-size:19px; font-weight:680; letter-spacing:-.035em; line-height:1.3; margin:0 0 9px; }
+    .project p { margin:0; color:var(--muted); font-size:13px; line-height:1.5; }
+    .info-grid {display:grid;grid-template-columns:1fr 1fr;gap:32px;padding:26px 0 72px;} .info-grid h3 {font-size:17px;margin:0 0 14px;} .info-grid p {font-size:14px;line-height:1.8;color:var(--muted);margin:0 0 10px;} .skill-tags {display:flex;flex-wrap:wrap;gap:8px;} .skill-tags span {border:1px solid var(--line);background:white;padding:8px 11px;border-radius:7px;font-size:12px;} .contact {padding:26px 0 80px;} .contact a {color:var(--accent);text-decoration:underline;text-underline-offset:4px;}
+    footer { border-top:1px solid var(--line); padding:28px 0 36px; color:var(--muted); font-size:12px; }
+    .footer-inner { display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+    :focus-visible { outline:3px solid var(--accent); outline-offset:4px; }
+    @media(max-width:650px) { .info-grid {grid-template-columns:1fr;} .container { width:min(100% - 32px,1100px); } .topbar { min-height:65px; } .hero { padding:72px 0 64px; } .projects { grid-template-columns:1fr; gap:12px; padding-bottom:70px; } .project { min-height:136px; padding:20px; } .section-head { padding-top:28px; } }
+    @media(prefers-reduced-motion:reduce) { *,*::before,*::after { scroll-behavior:auto!important; transition:none!important; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container topbar">
+      <a class="brand" href="#top">Mahammad Mustafali<span style="color:var(--accent)">.</span></a>
+      <span class="availability"><span class="dot" aria-hidden="true"></span>Senior Frontend / Full Stack Developer</span>
+    </div>
+  </header>
+  <main id="top" class="container">
+    <section class="hero" aria-labelledby="hero-title">
+      <span class="eyebrow">Developer Portfolio / Selected Work</span>
+      <h1 id="hero-title">Building digital<br />experiences<span style="color:var(--accent)">.</span></h1>
+      <p class="intro">I'm Mahammad, a frontend-focused Full Stack Developer with 7+ years of experience. I build responsive, production-ready applications using React, Next.js and TypeScript, with backend experience in PHP, Laravel and REST APIs.</p>
+      <div class="hero-links"><a class="button primary" href="#projects">Explore projects <span aria-hidden="true">↗</span></a><a class="button" href="Mahammad_Mustafali_CV.pdf" download>Download CV ↓</a><a class="button" href="mailto:devmahammadmustafa@gmail.com">Contact me ↗</a></div>
+    </section>
+    <section class="info-grid" aria-label="Experience and skills"><div><h3>Experience</h3><p><strong>State Tourism Agency of the Republic of Azerbaijan</strong><br>Senior Specialist / Frontend Developer · Aug 2024 – Present</p><p>Previously: Webcoder, ADAS, AzeriMed, Global Management, Medya Turk.</p></div><div><h3>Core technologies</h3><div class="skill-tags"><span>React.js</span><span>Next.js</span><span>TypeScript</span><span>JavaScript</span><span>Tailwind CSS</span><span>Redux</span><span>PHP</span><span>Laravel</span><span>REST APIs</span><span>MySQL</span><span>PostgreSQL</span></div></div></section>
+    <section id="projects" aria-labelledby="projects-title">
+      <div class="section-head"><h2 id="projects-title">Selected projects</h2><span class="count">15 projects</span></div>
+      <div class="projects">
+        <a class="project" href="https://homefix.az/" target="_blank" rel="noopener noreferrer"><div class="project-top"><span class="number">01</span><span class="arrow" aria-hidden="true">↗</span></div><div><h3>HomeFix</h3><p>Home services platform</p></div></a>
+        <a class="project" href="https://azerbaijan.travel/" target="_blank" rel="noopener noreferrer"><div class="project-top"><span class="number">02</span><span class="arrow" aria-hidden="true">↗</span></div><div><h3>Azerbaijan Travel</h3><p>Official destination website</p></div></a>
+        <a class="project" href="https://www.tourismboard.az/az" target="_blank" rel="noopener noreferrer"><div class="project-top"><span class="number">03</span><span class="arrow" aria-hidden="true">↗</span></div><div><h3>Azerbaijan Tourism Board</h3><p>Tourism organization website</p></div></a>
+        <a class="project" href="https://www.apfm.az/az" target="_blank" rel="noopener noreferrer"><div class="project-top"><span class="number">04</span><span class="arrow" aria-hidden="true">↗</span></div><div><h3>APFM</h3><p>Corporate website</p></div></a>
+        <a class="project" href="https://tourism.gov.az/" target="_blank" rel="noopener noreferrer"><div class="project-top"><span class="number">05</span><span class="arrow" aria-hidden="true">↗</span></div><div><h3>State Tourism Agency</h3><p>Government information portal</p></div></a>
+        <a class="project" href="https://qarabagh.com/" target="_blank" rel="noopener noreferrer"><div class="project-top"><span class="number">06</span><span class="arrow" aria-hidden="true">↗</span></div><div><h3>Qarabağ FK — Previous Website</h3><p>Football club website</p></div></a>
 
-      body {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-        font-family: "Courier New", Courier, monospace;
-      }
 
-      ul {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-      }
-    </style>
-  </head>
-  <body>
-    <ul>
-      <li>
-        <a target="_blank" href="https://qarabagh.com/">QARABAĞ FUTBOL KLUBU old</a>
-      </li>
-      <li>
-        <a target="_blank" href="http://qarabagh.coder.az/">QARABAĞ FUTBOL KLUBU</a>
-      </li>
-      <li>
-        <a target="_blank" href="https://kapaz.coder.az/">KAPAZ FUTBOL KLUBU</a>
-      </li>
-      <li>
-        <a target="_blank" href="https://avtopro.az/"
-          >Onlyan maşın ehtiyyat hissələri</a
-        >
-      </li>
-      <li>
-        <a target="_blank" href="https://aptekonline.az/">Onlayn Aptek</a>
-      </li>
-      <li>
-        <a target="_blank" href="https://vitam.az/"
-          >Vitam reklam və mebel həlləri
-        </a>
-      </li>
-      <li>
-        <a target="_blank" href="https://www.zeytunpharma.az">Zeytunpharma</a>
-      </li>
-      <li>
-        <a target="_blank" href="https://education.zeytunpharma.az/login"
-          >Zeytunpharma onlayn təlim və imtahan</a
-        >
-      </li>
-      <li>
-        <a target="_blank" href="https://alias.az/"
-          >"Alias Group" konsaltinq şirkəti</a
-        >
-      </li>
-      <li>
-        <a target="_blank" href="http://smartwaste.az/"
-          >Tullantıların idarə olunması xidmətləri</a
-        >
-      </li>
-      <li>
-        <a target="_blank" href="https://agro.coder.az/"
-          >Agro trade</a
-        >
-      </li>
-    </ul>
-  </body>
+        <a class="project" href="https://avtopro.az/" target="_blank" rel="noopener noreferrer"><div class="project-top"><span class="number">07</span><span class="arrow" aria-hidden="true">↗</span></div><div><h3>AvtoPro</h3><p>Online auto parts store</p></div></a>
+        <a class="project" href="https://aptekonline.az/" target="_blank" rel="noopener noreferrer"><div class="project-top"><span class="number">08</span><span class="arrow" aria-hidden="true">↗</span></div><div><h3>Aptek Online</h3><p>Online pharmacy</p></div></a>
+        <a class="project" href="https://vitam.az/" target="_blank" rel="noopener noreferrer"><div class="project-top"><span class="number">09</span><span class="arrow" aria-hidden="true">↗</span></div><div><h3>Vitam</h3><p>Advertising and furniture solutions</p></div></a>
+        <a class="project" href="https://www.zeytunpharma.az" target="_blank" rel="noopener noreferrer"><div class="project-top"><span class="number">10</span><span class="arrow" aria-hidden="true">↗</span></div><div><h3>Zeytun Pharma</h3><p>Pharmaceutical company website</p></div></a>
+        <a class="project" href="https://education.zeytunpharma.az/login" target="_blank" rel="noopener noreferrer"><div class="project-top"><span class="number">11</span><span class="arrow" aria-hidden="true">↗</span></div><div><h3>Zeytun Pharma Education</h3><p>Online training and examination platform</p></div></a>
+        <a class="project" href="https://alias.az/" target="_blank" rel="noopener noreferrer"><div class="project-top"><span class="number">12</span><span class="arrow" aria-hidden="true">↗</span></div><div><h3>Alias Group</h3><p>Consulting company website</p></div></a>
+        <a class="project" href="http://smartwaste.az/" target="_blank" rel="noopener noreferrer"><div class="project-top"><span class="number">13</span><span class="arrow" aria-hidden="true">↗</span></div><div><h3>SmartWaste</h3><p>Waste management services</p></div></a>
+
+        <a class="project" href="https://telebe.az/az" target="_blank" rel="noopener noreferrer"><div class="project-top"><span class="number">14</span><span class="arrow" aria-hidden="true">↗</span></div><div><h3>Tələbə.az</h3><p>Education, student life and career opportunities platform</p></div></a>
+        <a class="project" href="https://giftcard.az/az" target="_blank" rel="noopener noreferrer"><div class="project-top"><span class="number">15</span><span class="arrow" aria-hidden="true">↗</span></div><div><h3>Giftcard.az</h3><p>Gift card platform</p></div></a>
+      </div>
+    </section>
+    <section class="contact" aria-label="Contact"><div class="section-head"><h2>Let's work together</h2></div><p>Based in Baku, Azerbaijan · <a href="mailto:devmahammadmustafa@gmail.com">devmahammadmustafa@gmail.com</a> · <a href="tel:+994772770003">+994 77 277 00 03</a></p></section>
+  </main>
+  <footer><div class="container footer-inner"><span>© 2026 Mahammad Mustafali</span><span>Designed with clarity. Built for the web.</span></div></footer>
+</body>
 </html>
